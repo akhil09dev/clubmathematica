@@ -4,10 +4,11 @@
     padding: 0px;
     margin: 0px;
 }
-body{
+body,html{
     font-family:unset;
     color: #333;
- 
+ height: 100%;
+ scroll-behavior: smooth;
 }
 ul{
     list-style-type: none;
@@ -18,9 +19,10 @@ a{
     text-decoration: none;
     color: #333;
 }
-h1,h2{
+h1,h2,h3{
 text-align: center;
 padding: 20px;
+margin: 10px o;
 }
 img{
     width: auto;
@@ -37,13 +39,18 @@ img{
        margin: 50px;
        vertical-align: middle;
     }
+    .grid-3{display: grid;
+        justify-content:center;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
     .card{
         margin: auto;
         padding: 10px 15px;
         max-width: 500px;
         height: inherit;
         display: inline;
-        border: 1px solid black;
+        border: 1px solid white;
         border-radius: 10px;
     }
      .btn{
@@ -83,54 +90,65 @@ img{
 
 
 /*navbar*/
- /*img .logo{
+ .logo img{
     border-radius: 50%; 
-    border: 0px;
+    overflow-wrap: normal;
     transition: transform .2s;
-    max-width: 5px;
+    max-width: 100px;
     height: auto;
-    margin: 0px;
+    box-shadow:none;
     float: left !important;
+    padding: 0%;
+    
 }
 a :hover{
     -webkit-transform: scale(1.5);
       
-  }*/
-.navbar{position: sticky;
-    background-color:dimgray;
+  }
+.navbar{
+    position: fixed;
+       background-color:none;
     height: 70px;
+    z-index: 1;
 }
 .navbar ul{
     display: flex;
 }
 .navbar a{
     padding: 20px 30px;
-    color: white;
+    color:white;
 }
+
 .navbar a:active{
     border-top: 2px solid white;
     background-color: black ;
     opacity:0.5;
 }
 .navbar a:hover{
-    border-top: 2px solid white;
-    background-color: black ;
-    opacity: 0.6;
+    border-top: 2px solid blue;
+   color: blue;
+    
 }
-.container{
-    max-width: 1100px;
+.container{  max-width: 1100px;
     margin:0 auto;
-    overflow-y: auto;
+    overflow-y:visible;
     padding: 0 40px;
 }
-.flex{
-    display:flex;
+.flex{ display:flex;
     justify-content: space-between;
     align-items: center;
         height: 100%;
-      
+      overflow: visible;
        border-radius: 10px;
     }
+
+    .hero-img{
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(images/clubmath_hero.jpeg);
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+    background-size: cover;}
 /*about*/
     .about{display: grid;
         justify-content: center;
@@ -142,6 +160,7 @@ position: relative;
        
     grid-template-columns:1fr 1fr;
     column-width: auto;
+    overflow:visible;
     gap:30px;
     
    }
@@ -159,7 +178,7 @@ position: relative;
     .infinitum{
         display: grid;
         grid-template-columns: 1fr 1fr;  
-       
+        overflow: visible;
         gap: 30px;
 
           }
@@ -167,11 +186,28 @@ position: relative;
         height:350px;
         width: 500px;
     }
+
+    .recent
+    {
+        display: grid;
+        justify-content: center;
+        grid-template-columns:1fr 1fr 1fr;
+      justify-self:center;
+      margin: 10px 50px;
+      gap: 0;
+    }
+     .recent img{
+         width:60%;
+         height: auto;
+     }
+     .recent p{
+         width:60%;
+     }
      
     /*contact-form*/
     input[type=text],textarea {
         width: 100%;
-        padding: 12px;a
+        padding: 12px;
             border-radius: 10px;
         resize: vertical;
       }
@@ -182,10 +218,7 @@ position: relative;
         resize: vertical;
       }
       
-      label {
-        padding: 12px 12px 12px 0;
-        display: inline-block;
-      }
+     
       
       input[type=submit] {
         background-color: #4CAF50;
@@ -204,23 +237,24 @@ position: relative;
       .form {
           display: grid;
           justify-content: center;
+          position: relative;
+         
           width: 100%;
-          
         border-radius: 5px;
         background-color: 
         padding: 20px;
         
       }
       
-      .col-25 {
-        float: left;
-        width: 25%;
+      .label{
+       float: left;
+        width: 20%;
         margin-top: 6px;
       }
       
-      .col-75 {
-        float: left;
-        width: 75%;
+      .content{
+        float: right;
+        width: 70%;
         margin-top: 6px;
       }
       
@@ -231,16 +265,46 @@ position: relative;
         clear: both;
       }
       
-      /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-      @media screen and (max-width: 600px) {
-        .col-25, .col-75, input[type=submit] {
-          width: 100%;
-          margin-top: 0;
-        }
-      }
+      
       .form input{
           border:none;
       }
       .form input:active{
         border-bottom:1px solid blue;
     }
+   
+
+   
+.social{
+    display: grid;
+       justify-content: center;
+}
+.social div{
+    display: inline;
+    margin:20px 50px;
+}
+
+.footer{
+    
+    display: grid;
+    justify-content:center;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr 1fr;
+ background-color: black;
+ 
+opacity: 0.8;   
+color: white; 
+position: relative;
+}
+.left img{
+    width: 100px;
+    margin: 0;
+    box-shadow: none;
+    
+}
+.footer-icons img{
+  display: inline;  
+  box-shadow: none;
+  margin: 20px 10px;
+  width: 30px;
+}

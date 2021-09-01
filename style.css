@@ -284,7 +284,12 @@ position: relative;
         margin-top: 6px;
       }
       
-      /* Clear floats after the columns */
+ .form-container{
+          display:flex;
+        flex-direction: column;
+    justify-content: space-around;
+     }
+    
       .row:after {
         content: "";
         display: table;

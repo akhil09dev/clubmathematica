@@ -120,7 +120,8 @@ a :hover{
 .navbar{
     width: 100vw;
     position: fixed;
-       background-color:none;
+       background-color:black;
+    opacity:0.5;
     height: 70px;
     z-index: 1;
 }
@@ -130,6 +131,7 @@ a :hover{
 .navbar a{
     padding: 20px 30px;
     color:white;
+    font-weight:bold;
 }
 
 .navbar a:active{
